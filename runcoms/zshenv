@@ -10,6 +10,6 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-if [[ -f "${HOME}/.scripts/shell-ext.env" ]]; then
-    source "${HOME}/.scripts/shell-ext.env"
+if [[ -f "$HOME/.dotfiles.env" ]]; then
+    source "$HOME/.dotfiles.env"
 fi
