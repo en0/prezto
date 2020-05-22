@@ -10,8 +10,14 @@ ubuntu_install() {
     sudo chsh -s /bin/zsh
 }
 
+arch_install() {
+    sudo pacman -Syu zsh
+    sudo chsh -s /bin/zsh
+}
+
 _install() {
     has_platform ubuntu18 && ubuntu_install
+    has_platform arch && arch_install
     ln -s "$MD" "$HOME/.zprezto"
     for rc in "$MD"/runcoms/z*
     do
