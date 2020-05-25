@@ -42,7 +42,10 @@ setopt ZLE
 setopt NO_HUP
 
 # only fools wouldn't do this ;-)
-export EDITOR="vim --noplugin"
+
+which nvim >/dev/null && \
+    export EDITOR="nvim --noplugin" || \
+    export EDITOR="vim --noplugin"
 
 setopt IGNORE_EOF
 
