@@ -10,11 +10,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Import docker-exec commands
-if [ -f "$HOME/.scripts/shell-ext.env" ]; then
-    source "$HOME/.scripts/shell-ext.env"
-fi
-
 # Customize to your needs...
 
 # Now we can pipe to multiple outputs!
@@ -67,4 +62,6 @@ setopt EXTENDED_GLOB
 # hows about arrays be awesome?  (that is, frew${cool}frew has frew surrounding all the variables, not just first and last
 setopt RC_EXPAND_PARAM
 
-[[ $WS_AUTOLOAD == True ]] && kill -SIGUSR1 $$
+if [[ -f "$HOME/.dotfiles.env" ]]; then
+    source "$HOME/.dotfiles.env"
+fi
