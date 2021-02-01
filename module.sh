@@ -17,6 +17,7 @@ arch_install() {
 
 _install() {
     has_platform ubuntu18 && ubuntu_install
+    has_platform ubuntu20 && ubuntu_install
     has_platform arch && arch_install
     ln -s "$MD" "$HOME/.zprezto"
     for rc in "$MD"/runcoms/z*
@@ -40,4 +41,4 @@ _info() {
         echo " - [Installed]" || echo ""
 }
 
-run_if ubuntu18 arch osx
+run_if ubuntu18 ubuntu20 arch osx
